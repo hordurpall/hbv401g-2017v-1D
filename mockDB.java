@@ -12,7 +12,7 @@ public List<Trip> searchForKeyword(String query) throws ConnectException {
 	trip_list.add(trip2);
 	trip_list.add(trip3);
 	
-	retrun trip_list;
+	return trip_list;
 
 	}
 }
