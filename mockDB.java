@@ -2,7 +2,7 @@ package trunk;
 public mockDB() {
 }
 
-public ArrayList<Trip> searchForKeyword(String query) throws ConnectException {
+public List<Trip> searchForKeyword(String query) throws ConnectException {
 
 	List<Trip> Trip_list = new List<Trip>();
 	Trip trip1 = new Trip("Golden Cirlce");
