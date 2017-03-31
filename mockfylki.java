@@ -1,10 +1,18 @@
 package trunk;
+public mockDB() {
+}
 
-public class mockfylki {
-	static String fylki(String a) {
+public ArrayList<Trip> searchForKeyword(String query) throws ConnectException {
 
-		String a[][] = newString a[3][3];
-		a = "ferd 1";
-		return a;
-	};
+	ArrayList<Trip> Trip_list = new ArrayList<Trip>();
+	Trip trip1 = new Trip(01, "Golden Cirlce",40);
+	Trip trip2 = new Trip(02, "Blue lagon",40);
+	Trip trip3 = new Trip(03, "Horse riding",20);
+	trip_list.add(trip1);
+	trip_list.add(trip2);
+	trip_list.add(trip3);
+	
+	retrun trip_list;
+
+	}
 }
