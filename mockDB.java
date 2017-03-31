@@ -1,7 +1,7 @@
 package trunk;
 
-public mockDB() {
-
+public mockDB(){
+}
 
 	public List<Trip> searchForKeyword(String query) throws ConnectException {
 

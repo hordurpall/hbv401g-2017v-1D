@@ -1,17 +1,21 @@
+package trunk;
+
+
 public class TestFindTrips {
 
-	List<Trip> Trip_list;
+	List<Trip> trip_list;
 	List<Trip> list;
 	Trip nameOfTrip;
 
-	//@Test
+	@Test
+	
 	public void testFindTrips() {
 		
 		QueryDB queryDB = new mockDB();
 		
 		TripSearch tripSearch = new TripSearch(queryDB);
 		
-		list = tripSearch.findTrips(getnameOfTrip);
+		list = tripSearch.findTrips(nameOfTrip);
 		
 		assertNotNull(list);
 	}
