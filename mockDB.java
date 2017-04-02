@@ -1,11 +1,13 @@
 package trunk;
+import java.rmi.ConnectException;
+import java.util.ArrayList;
 
-public mockDB(){
-}
 
-	public List<Trip> searchForKeyword(String query) throws ConnectException {
+public class MockDB{
+	
+	public ArrayList<Trip> searchForKeyword(String query) throws ConnectException {
 
-		List<Trip> trip_list = new List<Trip>();
+		ArrayList<Trip> trip_list = new ArrayList<Trip>();
 		Trip trip1 = new Trip("Golden Cirlce");
 		Trip trip2 = new Trip("Blue Lagon");
 		Trip trip3 = new Trip("Horse riding");

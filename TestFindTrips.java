@@ -11,7 +11,7 @@ public class TestFindTrips {
 	
 	public void testFindTrips() {
 		
-		QueryDB queryDB = new mockDB();
+		QueryDB queryDB = new MockDB();
 		
 		TripSearch tripSearch = new TripSearch(queryDB);
 		
