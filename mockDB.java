@@ -1,7 +1,7 @@
 package trunk;
+
 import java.rmi.ConnectException;
 import java.util.ArrayList;
-
 
 public class MockDB{
 	
