@@ -1,5 +1,8 @@
 package trunk;
 import java.util.ArrayList;
+import java.util.Stev
+
+import org.junit.Test;
 
 public class TestFindTrips {
 
@@ -7,7 +10,7 @@ public class TestFindTrips {
 	ArrayList<Trip> list;
 	Trip nameOfTrip;
 
-	//@Trip
+	@Test
 	
 	public void testFindTrips() {
 		
