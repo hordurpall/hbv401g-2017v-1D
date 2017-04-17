@@ -16,11 +16,11 @@ public class Trip {
 	private int difficultyLevel;
 	private int suitableForKids;
 	private int priceForKids;
-	private int ID;
+	//private int ID;
 	
 
 	public Trip(String nameOfTrip, int lengthOfTrip, int location, int time, int date, int availableSeats,
-		int themeOfTrip, int handicapped, int difficultyLevel, int suitableForKids, int priceForKids, int ID) {
+		int themeOfTrip, int handicapped, int difficultyLevel, int suitableForKids, int priceForKids/*, int ID*/) {
 		this.nameOfTrip = nameOfTrip;
 		this.lengthOfTrip = lengthOfTrip;
 		this.location = location;
@@ -32,7 +32,7 @@ public class Trip {
 		this.difficultyLevel = difficultyLevel;
 		this.suitableForKids = suitableForKids;
 		this.priceForKids = priceForKids;
-		this.ID = ID;
+		//this.ID = ID;
 		
 	}
 
@@ -43,6 +43,14 @@ public class Trip {
 
 	public void setNameOfTrip(String nameOfTrip) {
 		this.nameOfTrip = nameOfTrip;
+	}
+	
+	public String getLengthOfTrip() {
+		return lengthOfTrip;
+	}
+
+	public void setLengthOfTrip(int lengthOfTrip) {
+		this.lengthOfTrip = lengthOfTrip;
 	}
 
 
