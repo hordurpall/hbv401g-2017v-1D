@@ -34,40 +34,10 @@ import java.util.*;
             this.setPriceForKids(priceForKids);
         }
 
-        public void fillTripArray() {
-            // properties
+      
 
-            int size; // total number of Students in collection
 
-            File file = new File("TripDetails.txt");
-
-            try {
-                Scanner in = new Scanner(file);
-
-                while (in.hasNextLine()) {
-                    String nameOfTrip = in.next();
-                    int lengthOfTrip = in.next();
-                    String location = in.next();
-                    int time = in.next();
-                    int date = in.next();
-                    int availableSeats = in.next();
-                    int price = in.next();
-                    String themeOfTrip = in.next();
-                    boolean handicapped = in.next();
-                    int difficultyLevel = in.next();
-                    boolean suitableForKids = in.next();
-                    int priceForKids = in.next();
-
-                    trips.add(new Trip(nameOfTrip, lengthOfTrip, location,time,date,availableSeats,price,themeOfTrip,handicapped,difficultyLevel,suitableForKids,priceForKids));
-                }
-
-            }
-
-            catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-
-        }
+       
 
        
 
