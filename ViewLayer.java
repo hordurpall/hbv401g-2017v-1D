@@ -1,19 +1,22 @@
 package trunk;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class  ViewLayer {
 	public static void main(String[] args){
 
-		StdOut.print("Choose searching method 1-8: ");
-		StdOut.print("1 = Keyword");
-		StdOut.print("2 = time");
-		StdOut.print("3 = Price");
-		StdOut.print("4 = Location");
-		StdOut.print("5 = Theme");
-		StdOut.print("6 = Suitiable for handicapped");
-		StdOut.print("7 = Difficulty");
-		StdOut.print("8 = Suitiable for kids");
+		StdOut.println("Choose searching method 1-8: ");
+		StdOut.println("1 = Keyword");
+		StdOut.println("2 = time");
+		StdOut.println("3 = Price");
+		StdOut.println("4 = Location");
+		StdOut.println("5 = Theme");
+		StdOut.println("6 = Suitiable for handicapped");
+		StdOut.println("7 = Difficulty");
+		StdOut.println("8 = Suitiable for kids");
 		int search = StdIn.readInt();
 		switch (search){
 		
@@ -23,6 +26,11 @@ public class  ViewLayer {
 			
 			StdOut.print("Search keyword: ");
 			String keyword = StdIn.readString();
+			TripCatalogue class1 = new TripCatalogue();
+			class1.searchForKeyword(keyword);
+	
+			StdOut.println(class1.searchForKeyword(keyword));
+				
 			
 		break;
 		
@@ -38,8 +46,11 @@ public class  ViewLayer {
 				StdOut.println("4 = 14:00");
 				StdOut.println("5 = 22:00");
 				int time = StdIn.readInt();
-				if((time <= 5) && (time>=1)) 
+				if((time <= 5) && (time>=1)) {
 					a1 = 1;
+				TripCatalogue class2 = new TripCatalogue();
+				class2.selectTime(time);
+			}
 				else
 					StdOut.println("Please pick a number between 1-5");
 		}
@@ -52,6 +63,10 @@ public class  ViewLayer {
 			int lower = StdIn.readInt();
 			StdOut.println("Select upper boundry for prize: ");
 			int upper = StdIn.readInt();
+			
+			TripCatalogue class3 = new TripCatalogue();
+			class3.selectPrice(lower, upper);
+		
 			
 		break;
 		
@@ -66,8 +81,11 @@ public class  ViewLayer {
 				StdOut.println("3 = North Iceland");
 				StdOut.println("4 = East Iceland");
 				int loc = StdIn.readInt();
-				if((loc <= 4) && (loc>=1)) 
+				if((loc <= 4) && (loc>=1)) {
 					a2 = 1;
+					TripCatalogue class4 = new TripCatalogue();
+					class4.selectLocation(loc);
+				}
 				else
 					StdOut.println("Please pick a number between 1-4");
 		}
@@ -84,8 +102,11 @@ public class  ViewLayer {
 				StdOut.println("2 = Vehicle");
 				StdOut.println("3 = Sight seeing");
 				int theme = StdIn.readInt();
-				if((theme <= 3) && (theme>=1)) 
+				if((theme <= 3) && (theme>=1)) {
 					a3 = 1;
+				TripCatalogue class5 = new TripCatalogue();
+				class5.selectTheme(theme);
+				}
 				else
 					StdOut.println("Please pick a number between 1-3");
 		}
@@ -100,8 +121,11 @@ public class  ViewLayer {
 				StdOut.println("0 = no ");
 				StdOut.println("1 = yes");
 				int access = StdIn.readInt();
-				if((access <= 1) && (access>=0)) 
+				if((access <= 1) && (access>=0)) {
 					a4 = 1;
+				TripCatalogue class6 = new TripCatalogue();
+				class6.selectLocation(access);
+				}
 				else
 					StdOut.println("Please pick a number between 0-1");
 		}
@@ -115,8 +139,11 @@ public class  ViewLayer {
 				StdOut.println("2 = medium");
 				StdOut.println("3 = hard");
 				int lvl = StdIn.readInt();
-				if((lvl <= 3) && (lvl>=1)) 
+				if((lvl <= 3) && (lvl>=1)) {
 					a5 = 1;
+					TripCatalogue class7 = new TripCatalogue();
+					class7.selectLocation(lvl);
+				}
 				else
 					StdOut.println("Please pick a number between 1-3");
 		}
@@ -131,8 +158,11 @@ public class  ViewLayer {
 				StdOut.println("0 = no ");
 				StdOut.println("1 = yes");
 				int kids = StdIn.readInt();
-				if((kids <= 1) && (kids>=0)) 
+				if((kids <= 1) && (kids>=0)) {
 					a6 = 1;
+					TripCatalogue class8 = new TripCatalogue();
+					class8.selectLocation(kids);
+				}
 				else
 					StdOut.println("Please pick a number between 0-1");
 			}
