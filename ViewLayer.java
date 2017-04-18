@@ -1,13 +1,13 @@
 package trunk;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
 public class  ViewLayer {
 	public static void main(String[] args){
-
+		int a = 0;
+		while (a == 0){
 		StdOut.println("Choose searching method 1-8: ");
 		StdOut.println("1 = Keyword");
 		StdOut.println("2 = time");
@@ -18,18 +18,25 @@ public class  ViewLayer {
 		StdOut.println("7 = Difficulty");
 		StdOut.println("8 = Suitiable for kids");
 		int search = StdIn.readInt();
+		if ((search > 8) || (search <1)){
+			StdOut.println("Choose a number between 1-8");
+		}
+		else {
+			a = 1;
+		
 		switch (search){
 		
-	
 		//insertKeyword
 		case 1: 
 			
 			StdOut.print("Search keyword: ");
 			String keyword = StdIn.readString();
-			TripCatalogue class1 = new TripCatalogue();
-			class1.searchForKeyword(keyword);
-	
-			StdOut.println(class1.searchForKeyword(keyword));
+			TripCatalogue tripCatalogue = new TripCatalogue();
+			ArrayList<Trip> bla = tripCatalogue.searchForKeyword(keyword);
+			for(Trip t: bla){
+		System.out.println("Trip x : "+ t);
+	}
+			//System.out.println(Arrays.toString(list.toArray(bla)));
 				
 			
 		break;
@@ -185,5 +192,6 @@ public class  ViewLayer {
 		//Hversu mörg sæti.
 		//bóka ferð.
 	
+		}}
 }
 }
