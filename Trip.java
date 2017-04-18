@@ -1,8 +1,8 @@
 package trunk;
 
-import java.io.*;
+/*import java.io.*;
 import java.util.*;
-
+*/
     public class Trip {
 
         private String nameOfTrip;

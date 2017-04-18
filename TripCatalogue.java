@@ -36,6 +36,7 @@ public class TripCatalogue {
 		trips.add(trip10);
 		trips.add(trip11);
 		trips.add(trip12);
+		
 	}
 
 	
@@ -43,6 +44,9 @@ public class TripCatalogue {
 		Iterator<Trip> iterator = trips.iterator();
 		while (iterator.hasNext()) {
 			Trip currentTrip = iterator.next();
+			if(nameOfTrip.equals(currentTrip))
+				results.add(currentTrip);
+			
 			
 		}
 
