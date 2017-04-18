@@ -1,4 +1,4 @@
-
+package trunk;
 
 import java.io.*;
 import java.util.*;
@@ -8,30 +8,30 @@ import java.util.*;
         private String nameOfTrip;
         private int lengthOfTrip;
         private String location;
-        private int time;
-        private int date;
+        private int timeOftrip;
+        private int dateOfTrip;
         private int availableSeats;
-        private int price;
+        private int priceOfTrip;
         private String themeOfTrip;
         private boolean handicapped;
         private int difficultyLevel;
         private boolean suitableForKids;
-        private int priceForKids;
+        private int priceOfTripForKids;
         
 
-        public Trip1(String nameOfTrip, int lengthOfTrip, String location, int time, int date, int availableSeats, int price, String themeOfTrip, boolean handicapped, int difficultyLevel, boolean suitableForKids, int priceForKids) {
+        public Trip1(String nameOfTrip, int lengthOfTrip, String location, int timeOftrip, int dateOfTrip, int availableSeats, int priceOfTrip, String themeOfTrip, boolean handicapped, int difficultyLevel, boolean suitableForKids, int priceOfTripForKids) {
             this.setNameOfTrip(nameOfTrip);
             this.setLengthOfTrip(lengthOfTrip);
             this.setLocation(location);
-            this.setTime(time);
-            this.setDate(date);
+            this.settimeOftrip(timeOftrip);
+            this.setdateOfTrip(dateOfTrip);
             this.setAvailableSeats(availableSeats);
-            this.setPrice(price);
+            this.setpriceOfTrip(priceOfTrip);
             this.setThemeOfTrip(themeOfTrip);
             this.setHandicapped(handicapped);
             this.setDifficultyLevel(difficultyLevel);
             this.setSuitableForKids(suitableForKids);
-            this.setPriceForKids(priceForKids);
+            this.setpriceOfTripForKids(priceOfTripForKids);
         }
 
       
@@ -67,20 +67,20 @@ import java.util.*;
 			this.location = location;
 		}
 
-		public int getTime() {
-			return time;
+		public int gettimeOftrip() {
+			return timeOftrip;
 		}
 
-		public void setTime(int time) {
-			this.time = time;
+		public void settimeOftrip(int timeOftrip) {
+			this.timeOftrip = timeOftrip;
 		}
 
-		public int getDate() {
-			return date;
+		public int getdateOfTrip() {
+			return dateOfTrip;
 		}
 
-		public void setDate(int date) {
-			this.date = date;
+		public void setdateOfTrip(int dateOfTrip) {
+			this.dateOfTrip = dateOfTrip;
 		}
 
 		public int getAvailableSeats() {
@@ -91,12 +91,12 @@ import java.util.*;
 			this.availableSeats = availableSeats;
 		}
 
-		public int getPrice() {
-			return price;
+		public int getpriceOfTrip() {
+			return priceOfTrip;
 		}
 
-		public void setPrice(int price) {
-			this.price = price;
+		public void setpriceOfTrip(int priceOfTrip) {
+			this.priceOfTrip = priceOfTrip;
 		}
 
 		public String getThemeOfTrip() {
@@ -131,11 +131,11 @@ import java.util.*;
 			this.suitableForKids = suitableForKids;
 		}
 
-		public int getPriceForKids() {
-			return priceForKids;
+		public int getpriceOfTripForKids() {
+			return priceOfTripForKids;
 		}
 
-		public void setPriceForKids(int priceForKids) {
-			this.priceForKids = priceForKids;
+		public void setpriceOfTripForKids(int priceOfTripForKids) {
+			this.priceOfTripForKids = priceOfTripForKids;
 		}
     }
