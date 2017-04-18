@@ -47,11 +47,31 @@ public class TripCatalogue {
 			if(nameOfTrip.equals(currentTrip))
 				results.add(currentTrip);
 			
-			
 		}
-
-		return trips;
-
-
+		return results;
+		
 }
+	
+	public ArrayList<Trip> selectLocation(int location) {
+		Iterator<Trip> iterator = trips.iterator();
+		while(iterator.hasNext()) {
+			Trip currentLocation = iterator.next();
+			if(currentLocation.equals(location))
+				results.add(currentLocation);
+		}
+		return results;
 }
+	
+	//theme
+	
+	public ArrayList<Trip> selectTheme(int themeOfTrip) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip currentTheme = iterator.next();
+			if(currentTheme.equals(themeOfTrip))
+				results.add(currentTheme);
+		}
+		return results;
+}
+
+	}
