@@ -66,8 +66,8 @@ public class  ViewLayer {
 		StdOut.println("Suitiable for handicaped: ");
 		StdOut.println("0 = no ");
 		StdOut.println("1 = yes");
-		int acces = StdIn.readInt();
-		if((acces <= 1) && (acces>=0)) 
+		int access = StdIn.readInt();
+		if((access <= 1) && (access>=0)) 
 			a4 = 1;
 		else
 			StdOut.println("Please pick a number between 0-1");
@@ -80,8 +80,8 @@ public class  ViewLayer {
 		StdOut.println("1 = easy");
 		StdOut.println("2 = medium");
 		StdOut.println("3 = hard");
-		int acces = StdIn.readInt();
-		if((acces <= 3) && (acces>=1)) 
+		int lvl = StdIn.readInt();
+		if((lvl <= 3) && (lvl>=1)) 
 			a5 = 1;
 		else
 			StdOut.println("Please pick a number between 1-3");
@@ -92,8 +92,8 @@ public class  ViewLayer {
 		StdOut.println("Suitiable for kids under 12 years: ");
 		StdOut.println("0 = no ");
 		StdOut.println("1 = yes");
-		int acces = StdIn.readInt();
-		if((acces <= 1) && (acces>=0)) 
+		int kids = StdIn.readInt();
+		if((kids <= 1) && (kids>=0)) 
 			a6 = 1;
 		else
 			StdOut.println("Please pick a number between 0-1");
