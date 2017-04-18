@@ -19,8 +19,8 @@ public class TripCatalogue {
 		Trip trip5 = new Trip("Ferð á Borgarfjörð Eystri", 8, 4, 800, 20, 15999, 2, 0, 1, 1, 4999);
 		Trip trip6 = new Trip("Inside the volcano", 6, 1, 1300, 10, 42000, 1, 0, 2, 0, 0);
 		Trip trip7 = new Trip("Rafting Bakkafljót", 6, 3, 1000, 20, 29000, 1, 0, 3, 0, 0);
-		Trip trip8 = new Trip("Norðurljós", 2, 1, 2100, 40, 10000, 1, 1, 1, 1, 3990);
-		Trip trip9 = new Trip("Snjólsleðaferð upp á fjarðarheiði", 10, 4, 800, 10, 24999, 2, 0, 2, 0, 0);
+		Trip trip8 = new Trip("Norðurljósaferð", 2, 1, 2100, 40, 10000, 1, 1, 1, 1, 3990);
+		Trip trip9 = new Trip("Snjósleðaferð upp á fjarðarheiði", 10, 4, 800, 10, 24999, 2, 0, 2, 0, 0);
 		Trip trip10 = new Trip("Viking Ship Sailing tour", 2, 1, 1000, 25, 12000, 2, 0, 1, 1, 7200);
 		Trip trip11 = new Trip("Midnight mountain bath & hike", 5, 1, 2200, 30, 18000, 1, 0, 2, 0,0);
 		Trip trip12 = new Trip("Laugarvegurinn", 2, 1, 1000, 20, 5000, 3, 1, 1, 1, 0);
@@ -40,38 +40,97 @@ public class TripCatalogue {
 	}
 
 	
-	public ArrayList<Trip> searchForKeyword(String nameOfTrip) {
+	public ArrayList<Trip> searchForKeyword(String keyword) {
 		Iterator<Trip> iterator = trips.iterator();
 		while (iterator.hasNext()) {
-			Trip currentTrip = iterator.next();
-			if(nameOfTrip.equals(currentTrip))
-				results.add(currentTrip);
-			
+			Trip nameOfTrip = iterator.next();
+			if(keyword.equals(nameOfTrip))
+				results.add(nameOfTrip);
 		}
 		return results;
+	}
+
+	//theme
+		
+		public ArrayList<Trip> selectTheme(int theme) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip themeOfTrip = iterator.next();
+				if(themeOfTrip.equals(theme))
+					results.add(themeOfTrip);
+			}
+			return results;
+		}
+
+		//time
+		
+		public ArrayList<Trip> selectTime (int time) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip timeOfTrip  = iterator.next();
+				if(timeOfTrip.equals(time))
+					results.add(timeOfTrip);
+			}
+			return results;
+		}
+		
+		//price
+		
+		public ArrayList<Trip> selectPrice (int upper,int lower) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip priceOfTrip = iterator.next();
+				if (priceOfTrip.getPriceOfTrip() <= upper) 
+						
+					results.add(priceOfTrip);
+			}
+			return results;
+		}
+		
+		//handicapped
+		
+		public ArrayList<Trip>  selectAccess(int access) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip handicapped  = iterator.next();
+				if(handicapped.equals(access))
+					results.add(handicapped);
+			}
+			return results;
+		}
+		
+		//difficulty level
+		
+		public ArrayList<Trip>  selectDifficultyLevel(int lvl) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip difficultyLevel  = iterator.next();
+				if(difficultyLevel.equals(lvl))
+					results.add(difficultyLevel);
+			}
+			return results;
+		}
+		
+		//kids
+		public ArrayList<Trip>  selectForKids(int kids) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip suitableForKids  = iterator.next();
+				if(suitableForKids.equals(kids))
+					results.add(suitableForKids);
+			}
+			return results;
+		}
+		
+		//location
+		public ArrayList<Trip>  selectLocation(int loc) {
+			Iterator<Trip> iterator = trips.iterator();
+			while (iterator.hasNext()) {
+				Trip location  = iterator.next();
+				if(location.equals(loc))
+					results.add(location);
+			}
+			return results;
+		}	
 		
 }
-	
-	public ArrayList<Trip> selectLocation(int location) {
-		Iterator<Trip> iterator = trips.iterator();
-		while(iterator.hasNext()) {
-			Trip currentLocation = iterator.next();
-			if(currentLocation.equals(location))
-				results.add(currentLocation);
-		}
-		return results;
-}
-	
-	//theme
-	
-	public ArrayList<Trip> selectTheme(int themeOfTrip) {
-		Iterator<Trip> iterator = trips.iterator();
-		while (iterator.hasNext()) {
-			Trip currentTheme = iterator.next();
-			if(currentTheme.equals(themeOfTrip))
-				results.add(currentTheme);
-		}
-		return results;
-}
-
-	}
