@@ -48,6 +48,12 @@ public class TripSearch {
 
 		return location;
 	}
+	
+	public ArrayList<Trip> searchByTheme(String them) {
+		ArrayList<Trip> theme = database.selectTheme(them);
+
+		return theme;
+	}
 
 	
 

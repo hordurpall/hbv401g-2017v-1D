@@ -66,6 +66,20 @@ public class TripCatalogue {
 		return results;
 
 	}
+	
+	//theme
+
+		public ArrayList<Trip> selectTheme(String theme) {
+			ArrayList<Trip> results = new ArrayList<Trip>();
+
+			for( int i = 0; i < trips.size(); i++ ) {
+				if(theme.equals(trips.get(i).getThemeOfTrip())) {
+					results.add(trips.get(i));
+				}
+			}
+			return results;
+
+		}
 	//price
 
 	public ArrayList<Trip> selectPrice(String upper, String lower) {
