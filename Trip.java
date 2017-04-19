@@ -1,5 +1,3 @@
-package trunk;
-
 /*import java.io.*;
 import java.util.*;
 */
@@ -130,5 +128,21 @@ import java.util.*;
 		public void setPriceForKids(int priceForKids) {
 			this.priceForKids = priceForKids;
 		}
+		public String toString() {
+	        return ("Name of trip:" + this.getNameOfTrip() + "\n" +
+	        			"Length of trip: " + this.getLengthOfTrip() + "\n"+
+	                    "Location: "+ this.getLocationOfTrip() + "\n" +
+	                    "Time of Trip: "+ this.getTimeOfTrip() + "\n" +
+	                    "Available Seats: " + this.getAvailableSeats() + "\n" +
+	                    "Price of trip: " + this.getPriceOfTrip() + "\n" +
+	                    "Theme of trip: " + this.getThemeOfTrip() + "\n" +
+	        			"Suited for handicapped: " + this.isHandicapped() +
+	        			"Difficulty level: " + + this.getDifficultyLevel() +
+	        			"Suitable for Kids: " + this.isSuitableForKids() +
+	        			"Price for Kids: " + this.getpriceForKids());
+	        
+	      
+	   }
+    
     }
 

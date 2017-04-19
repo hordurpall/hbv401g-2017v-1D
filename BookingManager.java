@@ -1,4 +1,3 @@
-package trunk;
 import java.util.ArrayList;
 
 public class BookingManager {

@@ -1,17 +1,15 @@
-package trunk;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
 
 
 public class TripCatalogue {
-	
+
 	ArrayList<Trip> trips = new ArrayList<Trip>();
 	private ArrayList<Trip> results = new ArrayList<Trip>();
-	
+
 	public TripCatalogue(){
-		
+
 		Trip trip1 = new Trip("Golden", 8, 1, 800, 40, 9900, 1, 1, 1, 1, 4950);
 		Trip trip2 = new Trip("Bæjarferð á Seyðisfjörð", 6, 4, 800, 40, 11999, 2, 1, 1, 1, 3999);
 		Trip trip3 = new Trip("Blue Lagoon", 6, 1, 1300, 40, 10000, 1, 1, 1, 1, 10000);
@@ -36,112 +34,92 @@ public class TripCatalogue {
 		trips.add(trip10);
 		trips.add(trip11);
 		trips.add(trip12);
-		
+
 	}
 
-	
+
 	public ArrayList<Trip> searchForKeyword(String keyword) {
 		Iterator<Trip> iterator = trips.iterator();
 		while (iterator.hasNext()) {
 			Trip nameOfTrip = iterator.next();
 			if(keyword.equals(nameOfTrip))
-				getResults().add(nameOfTrip);
+				results.add(nameOfTrip);
 		}
-		return getResults();
+		return results;
 	}
 
 	//theme
-		
-		public ArrayList<Trip> selectTheme(int theme) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip themeOfTrip = iterator.next();
-				if(themeOfTrip.equals(theme))
-					getResults().add(themeOfTrip);
-			}
-			return getResults();
-		}
 
-		//time
-		
-		public ArrayList<Trip> selectTime (int time) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip timeOfTrip  = iterator.next();
-				if(timeOfTrip.equals(time))
-					getResults().add(timeOfTrip);
-			}
-			return getResults();
+	public ArrayList<Trip> selectTheme(int theme) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip themeOfTrip = iterator.next();
+			if(themeOfTrip.equals(theme))
+				results.add(themeOfTrip);
 		}
-		
-		//price
-		
-		public ArrayList<Trip> selectPrice (int upper,int lower) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip priceOfTrip = iterator.next();
-				if (priceOfTrip.getPriceOfTrip() <= upper) 
-						
-					getResults().add(priceOfTrip);
-			}
-			return getResults();
-		}
-		
-		//handicapped
-		
-		public ArrayList<Trip>  selectAccess(int access) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip handicapped  = iterator.next();
-				if(handicapped.equals(access))
-					getResults().add(handicapped);
-			}
-			return getResults();
-		}
-		
-		//difficulty level
-		
-		public ArrayList<Trip>  selectDifficultyLevel(int lvl) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip difficultyLevel  = iterator.next();
-				if(difficultyLevel.equals(lvl))
-					getResults().add(difficultyLevel);
-			}
-			return getResults();
-		}
-		
-		//kids
-		public ArrayList<Trip>  selectForKids(int kids) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip suitableForKids  = iterator.next();
-				if(suitableForKids.equals(kids))
-					getResults().add(suitableForKids);
-			}
-			return getResults();
-		}
-		
-		//location
-		public ArrayList<Trip>  selectLocation(int loc) {
-			Iterator<Trip> iterator = trips.iterator();
-			while (iterator.hasNext()) {
-				Trip location  = iterator.next();
-				if(location.equals(loc))
-					getResults().add(location);
-			}
-			return getResults();
-		}
+		return results;
+	}
 
+	//time
 
-		public ArrayList<Trip> getResults() {
-			return results;
+	public ArrayList<Trip> selectTime (int time) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip timeOfTrip  = iterator.next();
+			if(timeOfTrip.equals(time))
+				results.add(timeOfTrip);
 		}
+		return results;
+	}
 
+	//price
 
-		public void setResults(ArrayList<Trip> results) {
-			this.results = results;
-		}	
-		
-		
+	public ArrayList<Trip> selectPrice (int upper,int lower) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip priceOfTrip = iterator.next();
+			if (priceOfTrip.getPriceOfTrip() <= upper) 
+
+				results.add(priceOfTrip);
+		}
+		return results;
+	}
+
+	//handicapped
+
+	public ArrayList<Trip>  selectAccess(int access) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip handicapped  = iterator.next();
+			if(handicapped.equals(access))
+				results.add(handicapped);
+		}
+		return results;
+	}
+
+	//difficulty level
+
+	public ArrayList<Trip>  selectDifficultyLevel(int lvl) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip difficultyLevel  = iterator.next();
+			if(difficultyLevel.equals(lvl))
+				results.add(difficultyLevel);
+		}
+		return results;
+	}
+
+	//kids
+	
+
+	//location
+	public ArrayList<Trip>  selectLocation(int loc) {
+		Iterator<Trip> iterator = trips.iterator();
+		while (iterator.hasNext()) {
+			Trip location  = iterator.next();
+			if(location.equals(loc))
+				results.add(location);
+		}
+		return results;
+	}
 }
