@@ -9,19 +9,19 @@ public class TripCatalogue {
 
 	public TripCatalogue(){
 		trips = new ArrayList<Trip>();
-
-		Trip trip1 = new Trip("Golden", 8, 1, 800, 40, 9900, 1, 1, 1, 1, 4950);
-		Trip trip2 = new Trip("Bæjarferð á Seyðisfjörð", 6, 4, 800, 40, 11999, 2, 1, 1, 1, 3999);
-		Trip trip3 = new Trip("Blue Lagoon", 6, 1, 1300, 40, 10000, 1, 1, 1, 1, 10000);
-		Trip trip4 = new Trip("Horse Riding", 3, 1, 1300, 20, 8800, 1, 0, 1, 1, 4400);
-		Trip trip5 = new Trip("Ferð á Borgarfjörð Eystri", 8, 4, 800, 20, 15999, 2, 0, 1, 1, 4999);
-		Trip trip6 = new Trip("Inside the volcano", 6, 1, 1300, 10, 42000, 1, 0, 2, 0, 0);
-		Trip trip7 = new Trip("Rafting Bakkafljót", 6, 3, 1000, 20, 29000, 1, 0, 3, 0, 0);
-		Trip trip8 = new Trip("Norðurljósaferð", 2, 1, 2100, 40, 10000, 1, 1, 1, 1, 3990);
-		Trip trip9 = new Trip("Snjósleðaferð upp á fjarðarheiði", 10, 4, 800, 10, 24999, 2, 0, 2, 0, 0);
-		Trip trip10 = new Trip("Viking Ship Sailing tour", 2, 1, 1000, 25, 12000, 2, 0, 1, 1, 7200);
-		Trip trip11 = new Trip("Midnight mountain bath & hike", 5, 1, 2200, 30, 18000, 1, 0, 2, 0,0);
-		Trip trip12 = new Trip("Laugarvegurinn", 2, 1, 1000, 20, 5000, 3, 1, 1, 1, 0);
+		// name, length, location, time, seat,price, theme, handicapped, difficulty, suitablekids, pricekids
+		Trip trip1 = new Trip("Golden circle", 8, 1, 1, 40, 9900, 1, 1, 1, 1, 4950,1);
+		Trip trip2 = new Trip("Bæjarferð á Seyðisfjörð", 6, 4, 1, 40, 11999, 2, 1, 1, 1, 3999,2);
+		Trip trip3 = new Trip("Blue Lagoon", 6, 1, 2, 40, 10000, 1, 1, 1, 1, 10000,3);
+		Trip trip4 = new Trip("Horse Riding", 3, 1, 3, 20, 8800, 1, 0, 1, 1, 4400,4);
+		Trip trip5 = new Trip("Ferð á Borgarfjörð Eystri", 8, 4, 4, 20, 15999, 2, 0, 1, 1, 4999,5);
+		Trip trip6 = new Trip("Inside the volcano", 6, 1, 4, 10, 42000, 1, 0, 2, 0, 0,6);
+		Trip trip7 = new Trip("Rafting Bakkafljót", 6, 3, 5, 20, 29000, 1, 0, 3, 0, 0,7);
+		Trip trip8 = new Trip("Norðurljósaferð", 2, 1, 5, 40, 10000, 1, 1, 1, 1, 3990,8);
+		Trip trip9 = new Trip("Snjósleðaferð upp á fjarðarheiði", 10, 4, 3, 10, 24999, 2, 0, 2, 0, 0,9);
+		Trip trip10 = new Trip("Viking Ship Sailing tour", 2, 1, 2, 25, 12000, 2, 0, 1, 1, 7200,10);
+		Trip trip11 = new Trip("Midnight mountain bath & hike", 5, 1, 5, 30, 18000, 1, 0, 2, 0,0,11);
+		Trip trip12 = new Trip("Laugarvegurinn", 2, 1, 1, 20, 5000, 3, 1, 1, 1, 0,12);
 		trips.add(trip1);
 		trips.add(trip2);
 		trips.add(trip3);
@@ -47,7 +47,7 @@ public class TripCatalogue {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(keyword.equals(trips.get(i).getNameOfTrip())) {
+			if((trips.get(i).getNameOfTrip()).contains(keyword)) {
 				results.add(trips.get(i));
 			}
 		}
@@ -56,11 +56,11 @@ public class TripCatalogue {
 	}
 	//time
 
-	public ArrayList<Trip> selectTime(String time) {
+	public ArrayList<Trip> selectTime(int time) {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(time.equals(trips.get(i).getTimeOfTrip())) {
+			if(time == (trips.get(i).getTimeOfTrip())) {
 				results.add(trips.get(i));
 			}
 		}
@@ -70,11 +70,11 @@ public class TripCatalogue {
 	
 	//theme
 
-		public ArrayList<Trip> selectTheme(String theme) {
+		public ArrayList<Trip> selectTheme(int theme) {
 			ArrayList<Trip> results = new ArrayList<Trip>();
 
 			for( int i = 0; i < trips.size(); i++ ) {
-				if(theme.equals(trips.get(i).getThemeOfTrip())) {
+				if(theme == (trips.get(i).getThemeOfTrip())) {
 					results.add(trips.get(i));
 				}
 			}
@@ -83,12 +83,13 @@ public class TripCatalogue {
 		}
 	//price
 
-	public ArrayList<Trip> selectPrice(String upper, String lower) {
+	public ArrayList<Trip> selectPrice(int limit) {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(upper.equals(trips.get(i).getPriceOfTrip()) && lower.equals(trips.get(i).getPriceOfTrip())) {
+			if(limit > (trips.get(i).getPriceOfTrip())) {
 				results.add(trips.get(i));
+				
 			}
 		}
 		return results;
@@ -97,11 +98,11 @@ public class TripCatalogue {
 
 	//handicapped
 
-	public ArrayList<Trip> selectAccess(String access) {
+	public ArrayList<Trip> selectAccess(int access) {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(access.equals(trips.get(i).isHandicapped())) {
+			if(access == (trips.get(i).isHandicapped())) {
 				results.add(trips.get(i));
 			}
 		}
@@ -111,11 +112,11 @@ public class TripCatalogue {
 
 	//difficulty level
 
-	public ArrayList<Trip> selectDifficultyLevel(String lvl) {
+	public ArrayList<Trip> selectDifficultyLevel(int lvl) {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(lvl.equals(trips.get(i).getDifficultyLevel())) {
+			if(lvl == (trips.get(i).getDifficultyLevel())) {
 				results.add(trips.get(i));
 			}
 		}
@@ -125,11 +126,11 @@ public class TripCatalogue {
 
 	//kids
 
-	public ArrayList<Trip> selectSuitableForKids(String kids) {
+	public ArrayList<Trip> selectSuitableForKids(int kids) {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(kids.equals(trips.get(i).isSuitableForKids())) {
+			if(kids == (trips.get(i).isSuitableForKids())) {
 				results.add(trips.get(i));
 			}
 		}
@@ -138,11 +139,11 @@ public class TripCatalogue {
 	}
 
 	//location
-	public ArrayList<Trip> selectLocation(String loc) {
+	public ArrayList<Trip> selectLocation(int loc) {
 		ArrayList<Trip> results = new ArrayList<Trip>();
 
 		for( int i = 0; i < trips.size(); i++ ) {
-			if(loc.equals(trips.get(i).getLocationOfTrip())) {
+			if(loc == (trips.get(i).getLocationOfTrip())) {
 				results.add(trips.get(i));
 			}
 		}

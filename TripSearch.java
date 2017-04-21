@@ -8,51 +8,51 @@ public class TripSearch {
 	public TripCatalogue database = new TripCatalogue();
 
 	public ArrayList<Trip> searchByKeyword(String keyword) {
-		ArrayList<Trip> name = database.searchForKeyword(keyword);
+		ArrayList<Trip> trips = database.searchForKeyword(keyword);
 
-		return name;
+		return trips;
 	}
 
-	public ArrayList<Trip> searchByTime(String time) {
-		ArrayList<Trip> times = database.selectTime(time);
+	public ArrayList<Trip> searchByTime(int time) {
+		ArrayList<Trip> trips = database.selectTime(time);
 
-		return times;
+		return trips;
 	}
 
-	//public ArrayList<Trip> searchByPrice(String upper,String lower) {
-	//	ArrayList<Trip> name = database.selectTime(upper, lower);
-	//
-	//	return name;
-	//} 
-
-	public ArrayList<Trip> searchByAccess(String access) {
-		ArrayList<Trip> acess = database.selectAccess(access);
-
-		return acess;
+	public ArrayList<Trip> searchByPrice(int limit) {
+		ArrayList<Trip> trips = database.selectPrice(limit);
+	
+		return trips;
 	} 
 
-	public ArrayList<Trip> searchByDifficulty(String lvl) {
-		ArrayList<Trip> level = database.selectDifficultyLevel(lvl);
+	public ArrayList<Trip> searchByAccess(int access) {
+		ArrayList<Trip> trips = database.selectAccess(access);
 
-		return level;
+		return trips;
 	} 
 
-	public ArrayList<Trip> searchByKids(String kids) {
-		ArrayList<Trip> suitable = database.searchForKeyword(kids);
+	public ArrayList<Trip> searchByDifficulty(int lvl) {
+		ArrayList<Trip> trips = database.selectDifficultyLevel(lvl);
 
-		return suitable;
+		return trips;
 	} 
 
-	public ArrayList<Trip> searchByLocation(String loc) {
-		ArrayList<Trip> location = database.selectLocation(loc);
+	public ArrayList<Trip> searchByKids(int kids) {
+		ArrayList<Trip> trips = database.selectDifficultyLevel(kids);
 
-		return location;
+		return trips;
+	} 
+
+	public ArrayList<Trip> searchByLocation(int loc) {
+		ArrayList<Trip> trips = database.selectLocation(loc);
+
+		return trips;
 	}
 	
-	public ArrayList<Trip> searchByTheme(String them) {
-		ArrayList<Trip> theme = database.selectTheme(them);
+	public ArrayList<Trip> searchByTheme(int them) {
+		ArrayList<Trip> trips = database.selectTheme(them);
 
-		return theme;
+		return trips;
 	}
 
 	

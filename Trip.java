@@ -15,10 +15,11 @@ import java.util.*;
          private int difficultyLevel;
          private int suitableForKids;
          private int priceForKids;
+         private int tripId;
         
 
         public Trip(String nameOfTrip, int lengthOfTrip, int locationOfTrip, int timeOfTrip, /*int dateOfTrip,*/ int availableSeats, int priceOfTrip,
-        		int themeOfTrip, int handicapped, int difficultyLevel, int suitableForKids, int priceForKids) {
+        		int themeOfTrip, int handicapped, int difficultyLevel, int suitableForKids, int priceForKids, int tripId) {
         		this.setNameOfTrip(nameOfTrip);
         		this.setLengthOfTrip(lengthOfTrip);
         		this.setLocationOfTrip(locationOfTrip);
@@ -31,6 +32,7 @@ import java.util.*;
         		this.setDifficultyLevel(difficultyLevel);
         		this.setSuitableForKids(suitableForKids);
         		this.setPriceForKids(priceForKids);
+        		this.setTripId(tripId);
         }
 
 		public String getNameOfTrip() {
@@ -128,21 +130,34 @@ import java.util.*;
 		public void setPriceForKids(int priceForKids) {
 			this.priceForKids = priceForKids;
 		}
+		
+		public int getTripId() {
+			return tripId;
+		}
+
+		public void setTripId(int tripid) {
+			this.tripId = tripId;
+		}
+    
 		public String toString() {
-	        return ("Name of trip:" + this.getNameOfTrip() + "\n" +
+	        return ("Here below are the results for your DayTourSearch"+ "\n" +
+	        		" " + "\n" +
+	        		"Name of trip:" + this.getNameOfTrip() + "\n" +
 	        			"Length of trip: " + this.getLengthOfTrip() + "\n"+
 	                    "Location: "+ this.getLocationOfTrip() + "\n" +
 	                    "Time of Trip: "+ this.getTimeOfTrip() + "\n" +
 	                    "Available Seats: " + this.getAvailableSeats() + "\n" +
 	                    "Price of trip: " + this.getPriceOfTrip() + "\n" +
 	                    "Theme of trip: " + this.getThemeOfTrip() + "\n" +
-	        			"Suited for handicapped: " + this.isHandicapped() +
-	        			"Difficulty level: " + + this.getDifficultyLevel() +
-	        			"Suitable for Kids: " + this.isSuitableForKids() +
-	        			"Price for Kids: " + this.getpriceForKids());
+	        			"Suited for handicapped: " + this.isHandicapped()+"\n" +
+	        			"Difficulty level: "  + this.getDifficultyLevel()+"\n" +
+	        			"Suitable for Kids: " + this.isSuitableForKids()+"\n" +
+	        			"Price for Kids: " + this.getpriceForKids()) + "\n" +
+	        			"Id of trip: " + this.getTripId() + "\n";	        
 	        
 	      
 	   }
-    
+
+		
     }
 

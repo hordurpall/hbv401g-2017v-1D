@@ -16,6 +16,7 @@ public class  ViewLayer {
 		StdOut.println("5 = Theme");
 		StdOut.println("6 = Suitiable for handicapped");
 		StdOut.println("7 = Difficulty");
+		StdOut.println("8 = Price limit");
 		Scanner scan = new Scanner(System.in);
 		int search = scan.nextInt();
 		switch (search){
@@ -69,6 +70,13 @@ public class  ViewLayer {
 			ViewLayer ag = new ViewLayer();
 			ag.searchDifficulty();
 			break;
+		
+		case 8:
+
+			//Price Limit
+			ViewLayer ah = new ViewLayer();
+			ah.searchPrice();
+			break;
 
 
 		}
@@ -92,7 +100,7 @@ public class  ViewLayer {
 		StdOut.println("4 = 14:00");
 		StdOut.println("5 = 22:00");
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
+		int s =Integer.parseInt(scan.nextLine());
 		System.out.println(t.searchByTime(s));
 	}
 	
@@ -102,7 +110,7 @@ public class  ViewLayer {
 		StdOut.println("0 = no ");
 		StdOut.println("1 = yes");
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
+		int s =Integer.parseInt(scan.nextLine());
 		System.out.println(t.searchByKids(s));
 	}
 	
@@ -114,7 +122,7 @@ public class  ViewLayer {
 		StdOut.println("3 = North Iceland");
 		StdOut.println("4 = East Iceland");
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
+		int s =Integer.parseInt(scan.nextLine());
 		System.out.println(t.searchByLocation(s));
 	}
 	
@@ -125,17 +133,17 @@ public class  ViewLayer {
 		StdOut.println("2 = Vehicle");
 		StdOut.println("3 = Sight seeing");
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
+		int s =Integer.parseInt(scan.nextLine());
 		System.out.println(t.searchByTheme(s));
 	}
 	
 	private void searchHandicapped(){
 		TripSearch t = new TripSearch();
-		StdOut.println("Suitiable for handicaped: ");
+		StdOut.println("Suitable for handicaped: ");
 		StdOut.println("0 = no ");
 		StdOut.println("1 = yes");
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
+		int s =Integer.parseInt(scan.nextLine());
 		System.out.println(t.searchByAccess(s));
 	}
 	
@@ -146,10 +154,18 @@ public class  ViewLayer {
 		StdOut.println("2 = medium");
 		StdOut.println("3 = hard");
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
+		int s =Integer.parseInt(scan.nextLine());
 		System.out.println(t.searchByDifficulty(s));
 	}
 	
+	private void searchPrice(){
+		TripSearch t = new TripSearch();
+		StdOut.println("Upper limit");
+		Scanner scan = new Scanner(System.in);
+		int s =Integer.parseInt(scan.nextLine());
+		System.out.println(s);
+		System.out.println(t.searchByPrice(s));
+	}
 		}
 
 
