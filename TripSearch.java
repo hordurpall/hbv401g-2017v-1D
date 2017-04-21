@@ -4,9 +4,13 @@ import java.util.ArrayList;
 public class TripSearch {
 
 	ArrayList<Trip> trips;
-
+//Establish a connection to the databases of customers and trips.
 	public TripCatalogue database = new TripCatalogue();
+	public BookingManager databse1 = new BookingManager();
 
+	
+	
+	//Search methods
 	public ArrayList<Trip> searchByKeyword(String keyword) {
 		ArrayList<Trip> trips = database.searchForKeyword(keyword);
 

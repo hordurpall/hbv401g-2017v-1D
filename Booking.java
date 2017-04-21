@@ -3,30 +3,25 @@ import java.util.*;
 
     class Booking {
 
-        private Trip trip;
+        
         private String Customer;
         private int kennitala;
-        private int paymentValue;
         private int bookSeats;
+        private int tripId;
     
     
- public Booking(Trip trip, String Customer, int kennitala, int paymentValue, int bookSeats){
-	 this.setTrip(trip);
+ public Booking( String Customer, int kennitala, int bookSeats, int tripId){
+	 
 	 this.setCustomer(Customer);
 	 this.setKennitala(kennitala);
-	 this.setPaymentValue(paymentValue);
 	 this.setBookSeats(bookSeats);
+	 this.setTripId(tripId);
+	 
 	 }
  
    
 
-	public Trip getTrip() {
-		return trip;
-	}
 
-	public void setTrip(Trip trip) {
-		this.trip = trip;
-	}
 
 
 
@@ -54,15 +49,7 @@ import java.util.*;
 
 
 
-	public int getPaymentValue() {
-		return paymentValue;
-	}
-
-
-
-	public void setPaymentValue(int paymentValue) {
-		this.paymentValue = paymentValue;
-	}
+	
 
 
 
@@ -74,6 +61,18 @@ import java.util.*;
 
 	public void setBookSeats(int bookSeats) {
 		this.bookSeats = bookSeats;
+	}
+
+
+
+	public int getTripId() {
+		return tripId;
+	}
+
+
+
+	public void setTripId(int tripId) {
+		this.tripId = tripId;
 	}
     
    

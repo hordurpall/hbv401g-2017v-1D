@@ -166,6 +166,8 @@ public class  ViewLayer {
 		System.out.println(s);
 		System.out.println(t.searchByPrice(s));
 	}
+	
+	
 		}
 
 
