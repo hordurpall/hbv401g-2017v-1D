@@ -8,6 +8,7 @@ public class TripCatalogue {
 
 
 	public TripCatalogue(){
+		trips = new ArrayList<Trip>();
 
 		Trip trip1 = new Trip("Golden", 8, 1, 800, 40, 9900, 1, 1, 1, 1, 4950);
 		Trip trip2 = new Trip("Bæjarferð á Seyðisfjörð", 6, 4, 800, 40, 11999, 2, 1, 1, 1, 3999);
